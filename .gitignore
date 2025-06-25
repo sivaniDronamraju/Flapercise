@@ -1,6 +1,11 @@
 *.pyc
-build
+__pycache__/
+build/
 .python-version
 *.egg-info
-.vscode
+.vscode/
 .DS_Store
+leaderboard.json
+*.avi
+*.log
+.ipynb_checkpoints/

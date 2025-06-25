@@ -1,39 +1,40 @@
-[FlapPyBird](https://sourabhv.github.io/FlapPyBird)
-===============
+# Flapercise
 
-A Flappy Bird Clone made using [python-pygame][pygame]
-
-> If you are in interested in the old one-file code for the game, you can [find it here][one-file-game]
-
-[pygame]: http://www.pygame.org
-[one-file-game]: https://github.com/sourabhv/FlapPyBird/blob/038359dc6122f8d851e816ddb3e7d28229d585e5/flappy.py
+Flapercise is a gesture-controlled version of Flappy Bird game. Built using **OpenCV**, **MediaPipe**, and **Pygame**, this version lets you flap by **jumping in real life** and **raise your left hand to start or restart**. It's fun, active, and a little workout-friendly!
 
 
-Setup (as tested on MacOS)
----------------------------
+## To start the game
+1. Clone the repo
+2. Activate your environment
+3. The core dependencies are:
 
-1. Install Python 3 from [here](https://www.python.org/download/releases/) (or use brew/apt/pyenv)
+- `pygame==2.6.1`
+- `opencv-python`
+- `mediapipe`
 
-2. Run `make init` (this will install pip packages, use virtualenv or something similar if you don't want to install globally)
+4. Install all dependencies using:
+```
+pip install -r requirements.txt
+```
+5. To run the game:
+```
+python main.py
+```
+## Game Controls & Gestures
 
-3. Run `make` to run the game. Run `DEBUG=True make` to see rects and coords
+- Start Game: Raise your left hand until the 5 sec countdown begins.
+- Flap (Jump): Physically jump in front of your webcam.
+- Restart Game: After a crash, raise your left hand again to restart.
 
-4. Use <kbd>&uarr;</kbd> or <kbd>Space</kbd> key to play and <kbd>Esc</kbd> to close the game.
+## Notes
 
-5. Optionally run `make web` to run the game in the browser (`pygbag`).
+1. `scores.json` stores leaderboard information and updates after each game.
+2. Ensure you’re in a well-lit room with your upper body clearly visible to the webcam.
+3. Try to stand in roughly the same position when starting or restarting your jump is tracked via hip position.
+4. Recommended Python version: 3.10 (MediaPipe may have issues on 3.11+).
+5. When the game starts, enter your name, then feel free to **move the game window** (not the webcam feed) to get your view right.
+6. To exit the game, press ESC
 
-Notable forks
--------------
-- [FlapPyBlink Blink to control the bird](https://github.com/sero583/FlappyBlink)
-- [FlappyBird Fury Mode](https://github.com/Cc618/FlapPyBird)
-- [FlappyBird Model Predictive Control](https://github.com/philzook58/FlapPyBird-MPC)
-- [FlappyBird OpenFrameworks Port](https://github.com/TheLogicMaster/ofFlappyBird)
-- [FlappyBird On Quantum Computing](https://github.com/WingCode/QuFlapPyBird)
-
-Made something awesome from FlapPyBird? Add it to the list :)
-
-
-Demo
-----------
-
-https://user-images.githubusercontent.com/2307626/130682424-9254b32d-efe0-406e-a6ea-3fb625a2df5e.mp4
+## Credits
+Game logic and sprite assets adapted from the original open-source project: [sourabhv/FlapPyBird](https://github.com/sourabhv/FlapPyBird).  
+This version adds motion control, gesture recognition, and MediaPipe-powered body tracking.
